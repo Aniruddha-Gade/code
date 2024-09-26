@@ -1,11 +1,12 @@
 const express = require("express")
-const { submitCode, addprob, getProblem } = require("../Controller/EditorController")
+const { submitCode, addprob, getProblem ,getAllProblems} = require("../Controller/EditorController")
 const router = express.Router()
 
 router.post("/submit", submitCode)
 router.post("/add", addprob)
 
 router.post("/getId", getProblem)
+router.get("/get-all-problems", getAllProblems)
 
 module.exports = router
 

@@ -181,6 +181,15 @@ exports.getProblem = async_handler(async (req, res, next) => {
   res.status(201).json({ status: true, problem })
 })
 
+exports.getAllProblems = async_handler(async (req, res, next) => {
+  const AllProbs = await Problem.find({})
+  console.log("random prob = ", AllProbs)
+  return res.status(201).json({
+    message: "All Problem fetched successfully",
+    success: true,
+    AllProbs,
+  });
+});
 
 
 const handleImage = () => {
